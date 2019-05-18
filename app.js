@@ -38,6 +38,10 @@ $('#js-upload-form').submit(function (e) {
             $('#upload-finished').fadeIn();
 
             $('#filename').text(filname);
+
+            $('#generate').removeClass('disabled');
+
+            $('#drop-zone').hide()
         } else {
             width++;
             elem.style.width = width + '%';
