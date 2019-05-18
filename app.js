@@ -32,13 +32,17 @@ $('#js-upload-form').submit(function (e) {
     function frame() {
         if (width >= 100) {
             clearInterval(id);
+
+            var filname = $('#imgupload').val().split('\\').pop();
+
+            $('#upload-finished').fadeIn();
+
+            $('#filename').text(filname);
         } else {
             width++;
             elem.style.width = width + '%';
         }
     }
-
-    console.log('submit')
 });
 
 $('#generate').click(function () {
