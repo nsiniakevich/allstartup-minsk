@@ -28,6 +28,10 @@ $('#generate').click(function () {
         HoldOn.close();
 
         $('#images').fadeIn(5000);
+
+        $('html, body').animate({
+            scrollTop: ($('#images').offset().top)
+        },500);
     }, 3000);
 });
 
