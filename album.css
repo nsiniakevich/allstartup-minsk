@@ -51,7 +51,8 @@ footer p {
   border-style: dashed;
   border-color: #ccc;
   line-height: 200px;
-  text-align: center
+  text-align: center;
+  cursor: pointer;
 }
 .upload-drop-zone.drop {
   color: #222;

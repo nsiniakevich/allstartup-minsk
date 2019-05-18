@@ -18,6 +18,29 @@ $('#drop-zone').click(function (e) {
     $('#imgupload').trigger('click');
 });
 
+$('#imgupload').on('change', function (e) {
+    $('#js-upload-form').submit();
+});
+
+$('#js-upload-form').submit(function (e) {
+    $('#progressbar-container').css({display: 'block'});
+
+    var elem = document.getElementById("progressbar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+        }
+    }
+
+    console.log('submit')
+});
+
 $('#generate').click(function () {
     HoldOn.open({
         theme: 'sk-folding-cube',
@@ -31,7 +54,7 @@ $('#generate').click(function () {
 
         $('html, body').animate({
             scrollTop: ($('#images').offset().top)
-        },500);
+        }, 500);
     }, 3000);
 });
 
