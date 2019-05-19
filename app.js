@@ -31,6 +31,8 @@ $('#js-upload-form').submit(function (e) {
 
     function frame() {
         if (width >= 100) {
+            console.log('Progressbar finished');
+
             clearInterval(id);
 
             var filname = $('#imgupload').val().split('\\').pop();
@@ -44,6 +46,7 @@ $('#js-upload-form').submit(function (e) {
             $('#drop-zone').hide()
         } else {
             width++;
+            console.log('Update progressbar %s %', width);
             elem.style.width = width + '%';
         }
     }
