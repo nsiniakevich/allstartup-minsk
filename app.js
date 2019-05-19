@@ -60,6 +60,37 @@ $('#generate').click(function () {
     setTimeout(function () {
         HoldOn.close();
 
+        var files = [
+            'images/thanos1.jpg',
+            'images/thanos2.jpg',
+            'images/thanos3.jpg',
+            'images/thanos4.jpg'
+        ];
+
+        $('#image-container').empty();
+
+        var arr = [];
+        while (arr.length < 3) {
+            var r = Math.floor(Math.random() * 4);
+            if (arr.indexOf(r) === -1) {
+                arr.push(r);
+                $('#image-container').append('<div class="col-md-4">\n' +
+                    '                    <div class="card mb-4 box-shadow">\n' +
+                    '                        <img id="image1" class="card-img-top"\n' +
+                    '                             src="' + files[r] + '"\n' +
+                    '                             data-holder-rendered="true">\n' +
+                    '                        <div class="card-body">\n' +
+                    '                            <div class="d-flex justify-content-between align-items-center">\n' +
+                    '                                <div class="btn-group">\n' +
+                    '                                    <button type="button" class="btn btn-sm btn-outline-secondary">Download</button>\n' +
+                    '                                </div>\n' +
+                    '                            </div>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                </div>');
+            }
+        }
+
         $('#images').fadeIn(5000);
 
         $('html, body').animate({
